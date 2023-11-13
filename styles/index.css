@@ -87,6 +87,7 @@ main {
     .action-btn {
         font-size: 20px;
         width: 200px;
+        color: #000;
     }
 }
 
