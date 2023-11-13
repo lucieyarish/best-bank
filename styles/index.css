@@ -75,6 +75,10 @@ main {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 800px) {
+    .logo {
+        width: 270px;
+    }
+
     .nav-tabs {
         flex-direction: column;
         align-items: center;
@@ -101,6 +105,7 @@ main {
     }
 }
 
+/* APPLY STYLES ON HOVER ON NON-MOBILE DEVICES ONLY: */
 @media (hover: hover) and (pointer: fine) {
     .action-btn:hover,
     .action-btn:focus {
