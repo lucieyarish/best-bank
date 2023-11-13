@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* TYPOGRAPHY */
+.text-bold {
+    font-weight: 700;
+}
+
+/* HEADER */
+.logo {
+    width: 370px;
+    display: block;
+    margin: 40px auto;
+}
+
+/* NAV */
+nav {
+    background-color: #FFD18C;
+}
+
+.nav-tabs {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.nav-tab {
+    padding: 18px;
+}
+
+/* LAYOUT */
+
+/* LINKS & BUTTONS */
