@@ -30,7 +30,6 @@ nav {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
     max-width: 730px;
     margin: 0 auto;
     padding: 0;
@@ -38,6 +37,12 @@ nav {
 
 .nav-tab {
     padding: 18px;
+}
+
+.nav-link {
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
 }
 
 /* LAYOUT */
@@ -73,10 +78,15 @@ main {
     .nav-tabs {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
     }
 
     .nav-tab {
         padding: 10px;
+    }
+
+    .nav-link {
+        font-size: 20px;
     }
 
     .action-btns {
@@ -96,5 +106,28 @@ main {
     .action-btn:focus {
         background-color: #FFD18C;
         width: 280px;
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 5px;
+        bottom: -5px;
+        left: 0;
+        background-color: #000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 }
