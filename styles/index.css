@@ -14,6 +14,31 @@ body {
     font-weight: 700;
 }
 
+.text-25 {
+    font-size: 25px;
+}
+
+.text-30 {
+    font-size: 30px;
+}
+
+.text-40 {
+    font-size: 40px;
+}
+
+/* COLORS */
+.background-orange {
+    background-color: #FFD18C;
+}
+
+.background-white {
+    background-color: #FFF;
+}
+
+.border-orange-dark {
+    border: 5px solid #FFA724;
+}
+
 /* HEADER */
 .logo {
     width: 370px;
@@ -22,10 +47,6 @@ body {
 }
 
 /* NAV */
-nav {
-    background-color: #FFD18C;
-}
-
 .nav-tabs {
     list-style: none;
     display: flex;
@@ -40,7 +61,6 @@ nav {
 }
 
 .nav-link {
-    font-size: 25px;
     text-decoration: none;
     color: #000;
 }
@@ -55,6 +75,33 @@ main {
     margin: 0 auto;
 }
 
+.overview-container {
+    max-width: 1100px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.accounts-overview, .spendings-overview {
+    width: 510px;
+}
+
+/* LISTS */
+.accounts-items {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    width: 500px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
 /* LINKS & BUTTONS */
 .action-btns {
     display: flex;
@@ -65,11 +112,9 @@ main {
 
 .action-btn {
     background-color: #FFF;
-    border: 5px solid #FFA724;
     border-radius: 50px;
     width: 275px;
     padding: 10px;
-    font-size: 30px;
     cursor: pointer;
 }
 
@@ -82,27 +127,54 @@ main {
     .nav-tabs {
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 10px 0;
     }
 
     .nav-tab {
         padding: 10px;
     }
 
-    .nav-link {
+    .nav-link, .action-btn {
         font-size: 20px;
-    }
-
-    .action-btns {
-        flex-direction: column;
-        align-items: center;
     }
 
     .action-btn {
-        font-size: 20px;
         width: 180px;
         color: #000;
     }
+
+    .overview-container {
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+    .overview-container h2 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .action-btn:hover,
+    .action-btn:focus {
+        background-color: #FFD18C;
+        width: 290px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .overview-container {
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+    .account-item {
+        max-width: 300px;
+    }
+
+    .account-item p {
+        font-size: 15px;
+    }
+
 }
 
 /* APPLY STYLES ON HOVER ON NON-MOBILE DEVICES ONLY: */
@@ -134,13 +206,5 @@ main {
     .nav-link:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
-    }
-}
-
-@media only screen and (min-width: 800px) {
-    .action-btn:hover,
-    .action-btn:focus {
-        background-color: #FFD18C;
-        width: 290px;
     }
 }

@@ -12,21 +12,21 @@
 <body>
     <header>
         <img class="logo" src="assets/images/bestbank_logo.png">
-        <nav>
+        <nav class="background-orange">
             <ul class="nav-tabs">
-                <li class="text-bold nav-tab">
+                <li class="text-bold text-25 nav-tab">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-tab">
+                <li class="nav-tab text-25">
                     <a class="nav-link" href="#">Payments</a>
                 </li>
-                <li class="nav-tab">
+                <li class="nav-tab text-25">
                     <a class="nav-link" href="#">Savings</a>
                 </li>
-                <li class="nav-tab">
+                <li class="nav-tab text-25">
                     <a class="nav-link" href="#">Financing</a>
                 </li>
-                <li class="nav-tab">
+                <li class="nav-tab text-25">
                     <a class="nav-link" href="#">Stocks</a>
                 </li>
             </ul>
@@ -36,9 +36,29 @@
     <main>
         <class="main-content">
             <section class="action-btns">
-                <button class="action-btn text-bold">Pay</button>
-                <button class="action-btn text-bold">Transfer</button>
+                <button class="action-btn text-bold text-30 border-orange-dark">Pay</button>
+                <button class="action-btn text-bold text-30 border-orange-dark">Transfer</button>
             </section>
+
+            <div class="overview-container">
+                <section class="accounts-overview">
+                    <h2 class="text-bold text-40">Accounts</h2>
+                    <ul id="accounts-list" class="accounts-items">
+                        <li class="account-item border-orange-dark background-orange">
+                            <p class="text-bold text-25">Main Account</p>
+                            <p class="text-bold text-25">$6,700.56</p>
+                        </li>
+                        <li class="account-item border-orange-dark background-white">
+                            <p class="text-bold text-25">Expenses</p>
+                            <p class="text-bold text-25">$5,134.63</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="spendings-overview">
+                    <h2 class="text-bold text-40">Spendings</h2>
+                </section>
+            </div>
         </class>
     </main>
     <script type="module" src="js/index.js"></script>
