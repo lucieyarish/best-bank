@@ -100,17 +100,17 @@ main {
 
     .action-btn {
         font-size: 20px;
-        width: 200px;
+        width: 180px;
         color: #000;
     }
 }
 
 /* APPLY STYLES ON HOVER ON NON-MOBILE DEVICES ONLY: */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (max-width: 800px) {
     .action-btn:hover,
     .action-btn:focus {
         background-color: #FFD18C;
-        width: 280px;
+        width: 190px;
     }
 
     .nav-link {
@@ -134,5 +134,13 @@ main {
     .nav-link:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .action-btn:hover,
+    .action-btn:focus {
+        background-color: #FFD18C;
+        width: 290px;
     }
 }
