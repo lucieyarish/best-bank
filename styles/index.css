@@ -71,12 +71,12 @@ main {
 }
 
 .main-content {
-    max-width: 730px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .overview-container {
-    max-width: 1100px;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     gap: 30px;
