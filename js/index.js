@@ -7,7 +7,7 @@ const renderAccounts = () => {
     const { id, title, balance } = accounts[i];
 
     let classes = 'account-item border-orange-dark text-bold text-25';
-    if (id === 1) {
+    if (id && id === 1) {
       classes += ' background-orange';
     }
 
