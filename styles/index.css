@@ -168,13 +168,12 @@ main {
     }
 
     .account-item {
-        max-width: 300px;
+        max-width: 400px;
     }
 
     .account-item p {
         font-size: 15px;
     }
-
 }
 
 /* APPLY STYLES ON HOVER ON NON-MOBILE DEVICES ONLY: */
