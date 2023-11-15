@@ -6,10 +6,15 @@ const renderAccounts = () => {
   for (let i = 0; i < accounts.length; i++) {
     const { id, title, balance } = accounts[i];
 
+    let classes = 'account-item border-orange-dark text-bold text-25';
+    if (id === 1) {
+      classes += ' background-orange';
+    }
+
     const html = `
-    <li data-id="${id}" class="account-item border-orange-dark">
-        <p class="text-bold text-25">${title}</p>
-        <p class="text-bold text-25">$ ${balance}</p>
+    <li data-id="${id}" class="${classes}">
+        <p>${title}</p>
+        <p>$ ${balance}</p>
     </li>
   `;
 
