@@ -42,6 +42,11 @@ const renderSpendings = (spendings) => {
   const allSpendings = spendings.map((s) => s.spent);
   const maxSpentVal = Math.max(...allSpendings);
 
+  if (spendings.length === 0 || spendings === null) {
+    const infoMessage = renderInfoMessage();
+    spendingsList.innerHTML += infoMessage;
+  }
+
   for (let i = 0; i < spendings.length; i++) {
     const { category, spent } = spendings[i];
     const itemId = i + 1;
@@ -63,6 +68,14 @@ const renderCurrentAccountSpendings = () => {
   const account = accounts.find((x) => x.id === activeAccountId);
   const spendings = account.spendings;
   renderSpendings(spendings);
+};
+
+const renderInfoMessage = () => {
+  const html = `
+        <p class="text-bold text-20">You haven't spent anything yet!</p>
+    `;
+
+  return html;
 };
 
 // HELPER FUCTIONS
@@ -118,3 +131,5 @@ document.addEventListener('click', function (event) {
     nonClickedItems.forEach((i) => i.classList.remove('background-orange'));
   }
 });
+
+media.addEventListener(calculateWidth);
