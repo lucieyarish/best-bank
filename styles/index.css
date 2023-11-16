@@ -111,6 +111,7 @@ main {
 }
 
 .spending-item {
+    width: 250px;
     margin-bottom: 20px;
 }
 
