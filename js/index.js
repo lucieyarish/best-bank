@@ -77,14 +77,22 @@ renderTemplate();
 document.addEventListener('click', function (event) {
   const clickedItem = event.target.closest('[data-id]');
   const clickedItemId = clickedItem.getAttribute('data-id');
+  activeAccountId = +clickedItemId;
   const allListItems = Array.from(accountsList.querySelectorAll('li'));
   const nonClickedItems = allListItems.filter(
     (li) => li.dataset.id !== clickedItemId
   );
 
+  const account = accounts.find((x) => x.id === activeAccountId);
+  const spendings = account.spendings;
+
+  //TODO: render spendings of account 1 when app is loaded
+  //TODO: remove spendings of other accounts when account is clicked
+
   if (clickedItem && !clickedItem.classList.contains('background-orange')) {
     clickedItem.classList.add('background-orange');
-    activeAccountId = clickedItemId;
+    renderSpendings(spendings);
+
     nonClickedItems.forEach((i) => i.classList.remove('background-orange'));
   }
 });
