@@ -1,10 +1,11 @@
 import { accounts } from './data.js';
 
 const accountsList = document.getElementById('accounts-list');
+const spendingsList = document.getElementById('spendings-list');
 
-const renderAccounts = () => {
+const renderTemplate = () => {
   for (let i = 0; i < accounts.length; i++) {
-    const { id, title, balance } = accounts[i];
+    const { id, title, balance, spendings } = accounts[i];
 
     let classes = 'account-item border-orange-dark text-bold text-25';
     if (id && id === 1) {
@@ -19,10 +20,28 @@ const renderAccounts = () => {
   `;
 
     accountsList.innerHTML += html;
+
+    renderSpendings(spendings);
   }
 };
 
-renderAccounts();
+const renderSpendings = (spendings) => {
+  for (let i = 0; i < spendings.length; i++) {
+    const { category, spent } = spendings[i];
+    const itemId = spendings[i];
+
+    const html = `
+        <li data-id="${itemId}" class="spending-item background-orange text-bold text-20">
+            <p>${category}</p>
+            <p>$ ${spent}</p>
+        </li>
+    `;
+
+    spendingsList.innerHTML += html;
+  }
+};
+
+renderTemplate();
 
 document.addEventListener('click', function (event) {
   const clickedItem = event.target.closest('[data-id]');
