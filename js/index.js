@@ -2,26 +2,13 @@ import { accounts } from './data.js';
 
 const accountsList = document.getElementById('accounts-list');
 const spendingsList = document.getElementById('spendings-list');
-
 let activeAccountId = 1;
 
+// TEMPLATE RENDERING FUNCTIONS
 const renderTemplate = () => {
   for (let i = 0; i < accounts.length; i++) {
     const { id, title, balance } = accounts[i];
-
-    let classes = 'account-item border-orange-dark text-bold text-25';
-    if (id && id === 1) {
-      classes += ' background-orange';
-    }
-
-    const html = `
-        <li data-id="${id}" class="${classes}">
-            <p>${title}</p>
-            <p>$ ${balance}</p>
-        </li>
-    `;
-
-    accountsList.innerHTML += html;
+    renderAccount(id, title, balance);
 
     if (id === activeAccountId) {
       const spendings = accounts.find(
@@ -32,25 +19,61 @@ const renderTemplate = () => {
   }
 };
 
+const renderAccount = (id, title, balance) => {
+  const commaSeparatedBalance = addThousandsSeparator(balance);
+
+  let classes = 'account-item border-orange-dark text-bold text-25';
+  if (id && id === 1) {
+    classes += ' background-orange';
+  }
+
+  const html = `
+          <li data-id="${id}" class="${classes}">
+              <p>${title}</p>
+              <p>$ ${commaSeparatedBalance}</p>
+          </li>
+      `;
+
+  accountsList.innerHTML += html;
+};
+
 const renderSpendings = (spendings) => {
+  clearLoadedSpendings();
   const allSpendings = spendings.map((s) => s.spent);
   const maxSpentVal = Math.max(...allSpendings);
 
   for (let i = 0; i < spendings.length; i++) {
     const { category, spent } = spendings[i];
     const itemId = i + 1;
-
     const itemWidth = calculateWidth(spent, maxSpentVal);
+    const commaSeparatedSpent = addThousandsSeparator(spent);
 
     const html = `
-        <li id="${itemId}" style="${itemWidth}" class="spending-item background-orange text-bold text-20">
-            <p>${category}</p>
-            <p>$ ${spent}</p>
-        </li>
-    `;
+            <li id="${itemId}" style="${itemWidth}" class="spending-item background-orange text-bold text-20">
+                <p>${category}</p>
+                <p>$ ${commaSeparatedSpent}</p>
+            </li>
+        `;
 
     spendingsList.innerHTML += html;
   }
+};
+
+const renderCurrentAccountSpendings = () => {
+  const account = accounts.find((x) => x.id === activeAccountId);
+  const spendings = account.spendings;
+  renderSpendings(spendings);
+};
+
+// HELPER FUCTIONS
+const addThousandsSeparator = (amountSpent) => {
+  let convertedAmount = parseFloat(amountSpent);
+  let commaSeparatedAmount = convertedAmount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  return commaSeparatedAmount;
 };
 
 const calculateWidth = (spent, maxSpentVal) => {
@@ -72,8 +95,14 @@ const calculateWidth = (spent, maxSpentVal) => {
   return styles;
 };
 
+const clearLoadedSpendings = () => {
+  spendingsList.innerHTML = '';
+};
+
+// FUNCTION CALLS
 renderTemplate();
 
+// EVENT LISTENERS
 document.addEventListener('click', function (event) {
   const clickedItem = event.target.closest('[data-id]');
   const clickedItemId = clickedItem.getAttribute('data-id');
@@ -83,16 +112,9 @@ document.addEventListener('click', function (event) {
     (li) => li.dataset.id !== clickedItemId
   );
 
-  const account = accounts.find((x) => x.id === activeAccountId);
-  const spendings = account.spendings;
-
-  //TODO: render spendings of account 1 when app is loaded
-  //TODO: remove spendings of other accounts when account is clicked
-
   if (clickedItem && !clickedItem.classList.contains('background-orange')) {
     clickedItem.classList.add('background-orange');
-    renderSpendings(spendings);
-
+    renderCurrentAccountSpendings();
     nonClickedItems.forEach((i) => i.classList.remove('background-orange'));
   }
 });
