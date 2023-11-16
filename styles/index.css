@@ -14,6 +14,10 @@ body {
     font-weight: 700;
 }
 
+.text-20 {
+    font-size: 20px;
+}
+
 .text-25 {
     font-size: 25px;
 }
@@ -88,18 +92,30 @@ main {
 }
 
 /* LISTS */
-.accounts-items {
+.accounts-items, .spendings-items {
     list-style-type: none;
     padding-left: 0;
 }
 
-.account-item {
+.account-item, .spending-item {
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
+}
+
+.account-item {
     width: 500px;
     padding: 5px 20px;
     margin-bottom: 10px;
+}
+
+.spending-item {
+    margin-bottom: 20px;
+}
+
+.spending-item p {
+    margin: 0;
+    padding: 10px 15px; 
 }
 
 /* LINKS & BUTTONS */
@@ -138,6 +154,10 @@ main {
         font-size: 20px;
     }
 
+    .action-btns {
+        padding-bottom: 10px;
+    }
+
     .action-btn {
         width: 180px;
         color: #000;
@@ -145,11 +165,20 @@ main {
 
     .overview-container {
         flex-direction: column;
+        align-items: center;
         margin-left: 50px;
     }
 
     .overview-container h2 {
         font-size: 25px;
+    }
+
+    .account-item, .spending-item {
+        max-width: 400px;
+    }
+
+    .account-item p, .spending-item p {
+        font-size: 15px;
     }
 }
 
@@ -158,21 +187,6 @@ main {
     .action-btn:focus {
         background-color: #FFD18C;
         width: 290px;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .overview-container {
-        flex-direction: column;
-        margin-left: 50px;
-    }
-
-    .account-item {
-        max-width: 400px;
-    }
-
-    .account-item p {
-        font-size: 15px;
     }
 }
 
