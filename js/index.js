@@ -1,4 +1,4 @@
-import { accounts } from './data/accounts-data';
+import { accounts } from './data/accounts.js';
 
 const accountsList = document.getElementById('accounts-list');
 const spendingsList = document.getElementById('spendings-list');
