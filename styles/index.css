@@ -31,6 +31,10 @@ body {
 }
 
 /* COLORS */
+.background-orange-light {
+    background-color: #FDF7F4;
+}
+
 .background-orange {
     background-color: #FFD18C;
 }
@@ -64,21 +68,12 @@ body {
     padding: 18px;
 }
 
-.nav-link {
-    text-decoration: none;
-    color: #000;
-}
-
 /* LAYOUT */
-main {
-    background-color: #FDF7F4;
-}
-
 .main-content {
     max-width: 1100px;
     margin: 0 auto;
     padding-bottom: 60px;
-    height: 100%;
+    height: 100vh;
 }
 
 .overview-container {
@@ -91,6 +86,25 @@ main {
 
 .accounts-overview, .spendings-overview {
     width: 510px;
+}
+
+.info-container {
+    margin: 0 auto;
+    width: 520px;
+    text-wrap: wrap;
+    text-align: center;
+}
+
+.height-100 {
+    height: 100vh;
+}
+
+.margin-top-0 {
+    margin: 0;
+}
+
+.padding-top-50 {
+    padding-top: 50px;
 }
 
 /* LISTS */
@@ -135,6 +149,37 @@ main {
     width: 275px;
     padding: 10px;
     cursor: pointer;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+    background-color: #FFD18C;
+    width: 190px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: -5px;
+    left: 0;
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* MEDIA QUERIES */
@@ -190,37 +235,5 @@ main {
     .action-btn:focus {
         background-color: #FFD18C;
         width: 290px;
-    }
-}
-
-/* APPLY STYLES ON HOVER ON NON-MOBILE DEVICES ONLY: */
-@media (hover: hover) and (pointer: fine) and (max-width: 800px) {
-    .action-btn:hover,
-    .action-btn:focus {
-        background-color: #FFD18C;
-        width: 190px;
-    }
-
-    .nav-link {
-        display: inline-block;
-        position: relative;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 5px;
-        bottom: -5px;
-        left: 0;
-        background-color: #000;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
-
-    .nav-link:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
     }
 }

@@ -1,4 +1,4 @@
-import { accounts } from './data.js';
+import { accounts } from './data/accounts-data';
 
 const accountsList = document.getElementById('accounts-list');
 const spendingsList = document.getElementById('spendings-list');
@@ -131,5 +131,3 @@ document.addEventListener('click', function (event) {
     nonClickedItems.forEach((i) => i.classList.remove('background-orange'));
   }
 });
-
-media.addEventListener(calculateWidth);
