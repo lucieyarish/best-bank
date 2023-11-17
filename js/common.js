@@ -14,7 +14,10 @@ const renderNavBar = () => {
     const { name, link } = pages[i];
     let classes = 'text-25 nav-tab';
 
-    if (currentPage.includes(name.toLowerCase())) {
+    if (
+      currentPage.includes(name.toLowerCase()) ||
+      (currentPage.includes('index') && name.toLowerCase === 'home')
+    ) {
       classes += ' text-bold';
     }
 
