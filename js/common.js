@@ -2,6 +2,7 @@ import { pages } from './data/pages.js';
 
 const navbar = document.getElementById('navbar');
 const infoContainer = document.getElementById('info');
+const footer = document.getElementById('footer');
 const locationLink = window.location.href;
 const currentPage = locationLink.substring(
   locationLink.lastIndexOf('/') + 1,
@@ -30,6 +31,16 @@ const renderNavBar = () => {
   }
 };
 
+const renderFooter = () => {
+  const html = `
+    <p>
+      ©2023 Lucie Yarish
+    </p>
+  `;
+
+  footer.innerHTML += html;
+};
+
 const renderInfoText = () => {
   const html = `
     <p class="text-bold text-30 margin-top-0 padding-top-50">
@@ -41,6 +52,7 @@ const renderInfoText = () => {
 };
 
 renderNavBar();
+renderFooter();
 
 if (currentPage !== 'index') {
   renderInfoText();

@@ -7,6 +7,10 @@ body {
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    /* min-height & flex-direction set to make footer stick to bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* TYPOGRAPHY */
@@ -84,8 +88,6 @@ body {
 .main-content {
     max-width: 1100px;
     margin: 0 auto;
-    padding-bottom: 60px;
-    height: 100vh;
 }
 
 .overview-container {
@@ -118,6 +120,16 @@ body {
 
 .padding-top-50 {
     padding-top: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+}
+
+footer p  {
+    margin: 0;
 }
 
 /* LISTS */
