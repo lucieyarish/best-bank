@@ -22,9 +22,9 @@ const renderTemplate = () => {
 const renderAccount = (id, title, balance) => {
   const commaSeparatedBalance = addThousandsSeparator(balance);
 
-  let classes = 'account-item border-orange-dark text-bold text-25';
+  let classes = 'account-item border-blue-dark text-bold text-25';
   if (id && id === 1) {
-    classes += ' background-orange';
+    classes += ' background-blue-dark text-white';
   }
 
   const html = `
@@ -54,7 +54,7 @@ const renderSpendings = (spendings) => {
     const commaSeparatedSpent = addThousandsSeparator(spent);
 
     const html = `
-            <li id="${itemId}" style="${itemWidth}" class="spending-item background-orange text-bold text-20">
+            <li id="${itemId}" style="${itemWidth}" class="spending-item background-blue-light text-bold text-20">
                 <p>${category}</p>
                 <p>$ ${commaSeparatedSpent}</p>
             </li>
@@ -125,9 +125,17 @@ document.addEventListener('click', function (event) {
     (li) => li.dataset.id !== clickedItemId
   );
 
-  if (clickedItem && !clickedItem.classList.contains('background-orange')) {
-    clickedItem.classList.add('background-orange');
+  if (
+    clickedItem &&
+    !clickedItem.classList.contains('background-blue-dark') &&
+    !clickedItem.classList.contains('text-white')
+  ) {
+    clickedItem.classList.add('background-blue-dark');
+    clickedItem.classList.add('text-white');
     renderCurrentAccountSpendings();
-    nonClickedItems.forEach((i) => i.classList.remove('background-orange'));
+    nonClickedItems.forEach(function (i) {
+      i.classList.remove('background-blue-dark');
+      i.classList.remove('text-white');
+    });
   }
 });

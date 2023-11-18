@@ -10,6 +10,10 @@ body {
 }
 
 /* TYPOGRAPHY */
+.text-light {
+    font-weight: 300;
+}
+
 .text-bold {
     font-weight: 700;
 }
@@ -31,20 +35,28 @@ body {
 }
 
 /* COLORS */
-.background-orange-light {
-    background-color: #FDF7F4;
+.background-grey-light {
+    background-color: #FAFAFA;
 }
 
-.background-orange {
-    background-color: #FFD18C;
+.background-blue-light {
+    background-color: #CBE1EC;
+}
+
+.background-blue-dark {
+    background-color: #0C4A60;
 }
 
 .background-white {
     background-color: #FFF;
 }
 
-.border-orange-dark {
-    border: 5px solid #FFA724;
+.border-blue-dark {
+    border: 5px solid #0C4A60;
+}
+
+.text-white {
+    color: #FFF;
 }
 
 /* HEADER */
@@ -154,13 +166,12 @@ body {
 
 .action-btn:hover,
 .action-btn:focus {
-    background-color: #FFD18C;
+    background-color: #CBE1EC;
     width: 190px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #000;
     display: inline-block;
     position: relative;
 }
@@ -173,7 +184,7 @@ body {
     height: 5px;
     bottom: -5px;
     left: 0;
-    background-color: #000;
+    background-color: #FFF;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -212,9 +223,13 @@ body {
         color: #000;
     }
 
+    .main-content {
+        margin: 0 auto;
+    }
+
     .overview-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     .overview-container h2 {
@@ -222,22 +237,36 @@ body {
     }
 
     .accounts-overview, .spendings-overview {
-        width: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 70vw;
     }
 
     .account-item, .spending-item {
-        max-width: 95%;
+       max-width: 90%;
     }
 
     .account-item p, .spending-item p {
         font-size: 15px;
+    }
+
+    .info-container {
+        width: 300px;
+    }
+
+    .info-container p {
+        font-size: 20px;
+        padding-top: 30px;
+        /* text-wrap: wrap;
+        width: 50%; */
     }
 }
 
 @media only screen and (min-width: 800px) {
     .action-btn:hover,
     .action-btn:focus {
-        background-color: #FFD18C;
+        background-color: #CBE1EC;
         width: 290px;
     }
 }

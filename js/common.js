@@ -3,27 +3,26 @@ import { pages } from './data/pages.js';
 const navbar = document.getElementById('navbar');
 const infoContainer = document.getElementById('info');
 const locationLink = window.location.href;
+const currentPage = locationLink.substring(
+  locationLink.lastIndexOf('/') + 1,
+  locationLink.lastIndexOf('.')
+);
 
 const renderNavBar = () => {
-  const currentPage = locationLink.substring(
-    locationLink.lastIndexOf('/') + 1,
-    locationLink.lastIndexOf('.')
-  );
-
   for (let i = 0; i < pages.length; i++) {
     const { name, link } = pages[i];
-    let classes = 'text-25 nav-tab';
+    let classes = 'text-25 nav-tab text-white text-light';
 
     if (
       currentPage.includes(name.toLowerCase()) ||
-      (currentPage.includes('index') && name.toLowerCase === 'home')
+      (currentPage.includes('index') && name.toLowerCase() === 'home')
     ) {
       classes += ' text-bold';
     }
 
     const html = `
       <li class="${classes}">
-        <a class="nav-link" href=${link}>${name}</a>
+        <a class="nav-link text-white" href=${link}>${name}</a>
       </li>
    `;
 
@@ -42,4 +41,7 @@ const renderInfoText = () => {
 };
 
 renderNavBar();
-renderInfoText();
+
+if (currentPage !== 'index') {
+  renderInfoText();
+}
