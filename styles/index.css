@@ -82,6 +82,7 @@ body {
     justify-content: flex-start;
     gap: 30px;
     margin: 0 auto;
+    padding: 30px;
 }
 
 .accounts-overview, .spendings-overview {
@@ -214,15 +215,18 @@ body {
     .overview-container {
         flex-direction: column;
         align-items: center;
-        margin-left: 50px;
     }
 
     .overview-container h2 {
         font-size: 25px;
     }
 
+    .accounts-overview, .spendings-overview {
+        width: 90%;
+    }
+
     .account-item, .spending-item {
-        max-width: 400px;
+        max-width: 95%;
     }
 
     .account-item p, .spending-item p {
