@@ -4,11 +4,11 @@
 
 View the finished project on [Netlify](https://best-bank-lucieyarish.netlify.app/)!
 
-<img width="1048" alt="best-bank-showcase-desktop" src="https://github.com/lucieyarish/best-bank/assets/79669599/fa7508bc-84b7-49bf-806c-c4e7a9481c71">
+<img width="900" alt="best-bank-showcase-desktop" src="https://github.com/lucieyarish/best-bank/assets/79669599/fa7508bc-84b7-49bf-806c-c4e7a9481c71">
 
-<img width="370" alt="best-bank-showcase-mobile-1" src="https://github.com/lucieyarish/best-bank/assets/79669599/21489454-cfad-4af4-b1c6-121ef638c681">
+<img width="270" alt="best-bank-showcase-mobile-1" src="https://github.com/lucieyarish/best-bank/assets/79669599/21489454-cfad-4af4-b1c6-121ef638c681">
 
-<img width="373" alt="best-bank-showcase-mobile-2" src="https://github.com/lucieyarish/best-bank/assets/79669599/01f7384a-85f7-45cf-aada-0b1f21ba0450">
+<img width="270" alt="best-bank-showcase-mobile-2" src="https://github.com/lucieyarish/best-bank/assets/79669599/01f7384a-85f7-45cf-aada-0b1f21ba0450">
 
 ## About
 
