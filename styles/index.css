@@ -95,14 +95,14 @@ body {
 
 /* LAYOUT */
 .main-content {
-    max-width: 1100px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
 .overview-container {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 30px;
     margin: 0 auto;
     padding: 30px;
