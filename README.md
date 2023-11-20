@@ -22,7 +22,7 @@ Having done my best in adhering to DRY principles, I had created a `common.js` f
 
 I had also tried making the website somewhat responsive by displaying content as columns on smaller devices, and scaling down font and container sizes. I will be learning more about responsiveness and relative units in the upcoming weeks, somore work will be done in that area soon.
 
-Total dev time:
+Total dev time: 10.5 hours
 
 ## Tools
 
