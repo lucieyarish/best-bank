@@ -9,6 +9,8 @@ const currentPage = locationLink.substring(
   locationLink.lastIndexOf('.')
 );
 
+console.log(currentPage);
+
 const renderNavBar = () => {
   for (let i = 0; i < pages.length; i++) {
     const { id, name, link } = pages[i];
@@ -55,6 +57,6 @@ const renderInfoText = () => {
 renderNavBar();
 renderFooter();
 
-if (currentPage !== 'index') {
+if (currentPage !== 'index' && !currentPage.endsWith('/')) {
   renderInfoText();
 }

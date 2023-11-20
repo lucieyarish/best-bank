@@ -118,7 +118,10 @@ renderTemplate();
 // EVENT LISTENERS
 document.addEventListener('click', function (event) {
   const clickedItem = event.target.closest('[data-id]');
-  const clickedItemId = clickedItem.getAttribute('data-id');
+  let clickedItemId;
+  if (clickedItem) {
+    clickedItemId = clickedItem.getAttribute('data-id');
+  }
   activeAccountId = +clickedItemId;
   const allListItems = Array.from(accountsList.querySelectorAll('li'));
   const nonClickedItems = allListItems.filter(
