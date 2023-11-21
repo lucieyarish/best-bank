@@ -32,19 +32,19 @@ body {
 }
 
 .text-20 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .text-25 {
-    font-size: 25px;
+    font-size: 1.56rem;
 }
 
 .text-30 {
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 .text-40 {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 /* COLORS */
@@ -76,7 +76,7 @@ body {
 .logo {
     width: 370px;
     display: block;
-    margin: 40px auto;
+    margin: 2.5em auto;
 }
 
 /* NAV */
@@ -90,7 +90,7 @@ body {
 }
 
 .nav-tab {
-    padding: 18px;
+    padding: 0.75em;
 }
 
 /* LAYOUT */
@@ -105,16 +105,17 @@ body {
     justify-content: center;
     gap: 30px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 1.875em;
 }
 
 .accounts-overview, .spendings-overview {
-    width: 510px;
+    max-width: 510px;
+    width: 100%;
 }
 
 .info-container {
     margin: 0 auto;
-    width: 520px;
+    max-width: 520px;
     text-wrap: wrap;
     text-align: center;
 }
@@ -128,12 +129,12 @@ body {
 }
 
 .padding-top-50 {
-    padding-top: 50px;
+    padding-top: 1.6em;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 1.25em;
     margin-top: auto;
 }
 
@@ -155,18 +156,18 @@ footer p  {
 
 .account-item {
     width: 500px;
-    padding: 5px 20px;
-    margin-bottom: 10px;
+    padding: 0.2em 0.8em;
+    margin-bottom: 0.4em;
 }
 
 .spending-item {
     width: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 }
 
 .spending-item p {
     margin: 0;
-    padding: 10px 15px; 
+    padding: 0.5em 0.75em; 
 }
 
 /* LINKS & BUTTONS */
@@ -174,14 +175,14 @@ footer p  {
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding: 25px;
+    padding: 1.56em;
 }
 
 .action-btn {
     background-color: var(--white);
     border-radius: 50px;
     width: 275px;
-    padding: 10px;
+    padding:0.33em;
     cursor: pointer;
 }
 
